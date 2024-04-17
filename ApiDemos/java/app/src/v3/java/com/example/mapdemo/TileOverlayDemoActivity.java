@@ -30,6 +30,8 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
+import io.github.pixee.security.HostValidator;
+import io.github.pixee.security.Urls;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -76,7 +78,7 @@ public class TileOverlayDemoActivity extends AppCompatActivity
                 String s = String.format(Locale.US, MOON_MAP_URL_FORMAT, zoom, x, reversedY);
                 URL url = null;
                 try {
-                    url = new URL(s);
+                    url = Urls.create(s, Urls.HTTP_PROTOCOLS, HostValidator.DENY_COMMON_INFRASTRUCTURE_TARGETS);
                 } catch (MalformedURLException e) {
                     throw new AssertionError(e);
                 }

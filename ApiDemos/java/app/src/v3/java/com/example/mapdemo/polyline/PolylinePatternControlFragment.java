@@ -28,6 +28,7 @@ import com.google.android.libraries.maps.model.Dash;
 import com.google.android.libraries.maps.model.Dot;
 import com.google.android.libraries.maps.model.Gap;
 import com.google.android.libraries.maps.model.PatternItem;
+import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -40,7 +41,7 @@ public class PolylinePatternControlFragment extends PolylineControlFragment impl
     private static final int MAX_PATTERN_SIZE = 6;
     private static final int MAX_DASH_LENGTH = 200;
     private static final int MAX_GAP_LENGTH = 100;
-    private static final Random RANDOM = new Random();
+    private static final Random RANDOM = new SecureRandom();
 
     private Button patternSolidBtn;
     private Button patternDottedBtn;

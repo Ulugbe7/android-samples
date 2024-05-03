@@ -30,6 +30,7 @@ import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
 import androidx.appcompat.app.AppCompatActivity;
+import java.security.SecureRandom;
 
 import java.util.Random;
 
@@ -176,7 +177,7 @@ public class SaveStateDemoActivity extends AppCompatActivity {
 
         @Override
         public boolean onMarkerClick(Marker marker) {
-            float newHue = MARKER_HUES[new Random().nextInt(MARKER_HUES.length)];
+            float newHue = MARKER_HUES[new SecureRandom().nextInt(MARKER_HUES.length)];
             mMarkerInfo.mHue = newHue;
             marker.setIcon(BitmapDescriptorFactory.defaultMarker(newHue));
             return true;

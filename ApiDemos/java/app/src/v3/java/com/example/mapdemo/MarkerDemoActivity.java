@@ -56,6 +56,7 @@ import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
 import android.widget.Toast;
+import java.security.SecureRandom;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -206,7 +207,7 @@ public class MarkerDemoActivity extends AppCompatActivity implements
 
     private RadioGroup mOptions;
 
-    private final Random mRandom = new Random();
+    private final Random mRandom = new SecureRandom();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
